@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>SONG</div>
+    <script>
+        // 文件名为main.js
+        function work() {
+            // onmessage = ({ data: { message } }) => {
+            //     let i = 0;
+            //     if (message === true) {
+            //         while (i++) {
+            //             if (i % 10000 === 0) {
+            //                 postMessage({ result: i })
+            //             }
+            //         }
+            //     }
+            // };
+            let i = 0;
+            while (++i) {
+                if (i % 1000000 === 0) {
+                    postMessage({ result: i })
+                }
+            }
+        }
+
+        const runWorker = (f) => {
+            const worker = new Worker(
+                URL.createObjectURL(new Blob([`(${f.toString()})()`]))
+            );
+
+            worker.onmessage = ({ data: { result } }) => {
+                console.log(result);
+            };
+
+            worker.postMessage({ message: true });
+        };
+
+        const testWorker = runWorker(work);
+    </script>
+</body>
+
+</html>
