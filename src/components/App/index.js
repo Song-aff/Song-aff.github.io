@@ -10,7 +10,7 @@ function Timer() {
       return num;
     },
     // eslint-disable-next-line
-    [num % 10 === 10]
+    [num % 10 === 0]
   );
 
   useEffect(() => {
@@ -18,6 +18,9 @@ function Timer() {
       setNum(num + 1);
     }, 500);
     console.log(a);
+    if (localStorage.getItem("test")) {
+      console.log(localStorage.getItem("test"));
+    }
   });
 
   return <p>{count}</p>;

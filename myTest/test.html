@@ -12,34 +12,11 @@
     <div id="live2d-widget">
         <canvas id="live2dcanvas">
     </div>
-    <!-- <iframe src="http://127.0.0.1:5500/myTest/test2.html"></iframe> -->
+    <iframe frameborder=0 src="https://codesandbox.io/s/contextreducer-nnhkg?file=/src/App.js"></iframe>
     <script>
-        // setInterval(() => {
-        //     document.getElementById('dida').innerText = new Date()
-        // }, 1000)
-        // function work() {
-        //     let i = 0;
-        //     while (++i) {
-        //         if (i % 1000000 === 0) {
-        //             postMessage({ result: i })
-        //         }
-        //     }
-        // }
-
-        // const runWorker = (f) => {
-        //     const worker = new Worker(
-        //         URL.createObjectURL(new Blob([`(${f.toString()})()`]))
-        //     );
-
-        //     worker.onmessage = ({ data: { result } }) => {
-        //         console.log(result);
-        //         worker.terminate()
-        //     };
-
-        //     worker.postMessage({ message: true });
-        // };
-
-        // const testWorker = runWorker(work);
+        setInterval(() => {
+            document.getElementById('dida').innerText = new Date()
+        }, 1000)
     </script>
     <!--
         可替换的模型名称
